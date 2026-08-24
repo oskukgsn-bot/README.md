@@ -9,6 +9,7 @@ def debug_print(debug_msg=None, **kwargs):
 
 def mergesort(array):
     debug_print(array=array)
+
     if len(array) <= 1:
         return array
 
@@ -38,16 +39,19 @@ def merge(left, right):
         merged += right
 
     debug_print(merged=merged)
+
     return merged
 
 
 if __name__ == "__main__":
     input_str = input("Enter numbers, separated by ',': ")
 
+    input_list = input_str.split(",")
+    debug_print(input_list=input_list)
+
     try:
-        value_list = [int(value) for value in input_str.split(",")]
+        value_list = [int(value) for value in input_list]
     except ValueError:
-        print("Invalid input")
         quit(1)
 
     debug_print(value_list=value_list)
